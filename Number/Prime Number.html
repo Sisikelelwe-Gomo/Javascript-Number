@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Prime(max)
+        {
+            var temp = [], i, j, primes = [];
+            for (i = 2; i <= max; ++i)
+            {
+                if(!temp[i])
+                {
+                    //i has not been marked -- it is prime
+
+                    primes.push(i);
+
+                    for (j = i << 1; j <=max; j+=i)
+                    {
+                        temp[j] = true;
+                    }
+                }
+            }
+            return primes
+        }
+        primes(50);
+    </script>
+</body>
+</html>
